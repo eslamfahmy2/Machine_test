@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.network.model.ArticleModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="8dp"
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/layoutTop"
+            layout="@layout/article_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:item="@{item}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/expandable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="300"
+            app:el_expanded="false"
+            app:el_parallax="0.5"
+            app:layout_constraintTop_toBottomOf="@id/layoutTop">
+
+
+            <include
+                layout="@layout/article_bttom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:item="@{item}" />
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

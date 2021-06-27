@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/support_simple_spinner_dropdown_item"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cancelPolicy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/cancelPolicyLine"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/cancelPolicyGroup"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/cancelPolicyLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="@id/cancelPolicyGroup"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/cancelPolicy" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/cancelPolicyGroup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="cancelPolicy,cancelPolicyLine"
+        app:layout_constraintBottom_toTopOf="@id/termsAndCondGroup"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/termsAndCond"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/termsAndCondLine"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/termsAndCondGroup"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/termsAndCondLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="@id/termsAndCondGroup"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/termsAndCond" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/termsAndCondGroup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="termsAndCond,termsAndCondLine"
+        app:layout_constraintBottom_toTopOf="@id/privatePolicyGroup"
+        app:layout_constraintTop_toBottomOf="@id/cancelPolicyGroup" />
+
+    <TextView
+        android:id="@+id/privatePolicy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/privatePolicyLine"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/privatePolicyGroup"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/privatePolicyLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="@id/privatePolicyGroup"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/privatePolicy" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/privatePolicyGroup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="privatePolicy,privatePolicyLine"
+        app:layout_constraintBottom_toTopOf="@id/aboutGroup"
+        app:layout_constraintTop_toBottomOf="@id/termsAndCondGroup" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/aboutLine"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/aboutGroup"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/aboutLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="@id/aboutGroup"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/about" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/aboutGroup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="about,aboutLine"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+        app:layout_constraintTop_toBottomOf="@id/privatePolicyGroup" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
